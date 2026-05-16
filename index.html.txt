@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java Paper</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f0f0f,#1f1f1f,#2c2c54);
+    padding:20px;
+}
+
+
+.container{
+    width:100%;
+    max-width:400px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+
+h1{
+    color:white;
+    text-align:center;
+    margin-bottom:10px;
+    font-size:2rem;
+}
+
+
+button{
+    border:none;
+    outline:none;
+    padding:20px;
+    border-radius:22px;
+    font-size:1.2rem;
+    font-weight:700;
+    color:white;
+    cursor:pointer;
+    transition:0.15s ease;
+
+
+    box-shadow:
+    0 12px 22px rgba(0,0,0,0.4),
+    inset 0 2px 5px rgba(255,255,255,0.25),
+    inset 0 -4px 8px rgba(0,0,0,0.35);
+}
+
+
+button:active{
+    transform:translateY(5px) scale(0.98);
+}
+
+
+.btn1{
+    background:linear-gradient(145deg,#00b09b,#96c93d);
+}
+
+
+.btn2{
+    background:linear-gradient(145deg,#ff416c,#ff4b2b);
+}
+
+
+.btn3{
+    background:linear-gradient(145deg,#4776E6,#8E54E9);
+}
+
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <h1>Java paper kaisa gya??</h1>
+
+
+    <button class="btn1" onclick="playAudio('audio1')">
+        Thik Thak
+    </button>
+
+
+    <button class="btn2" onclick="playAudio('audio2')">
+        Bakwas
+    </button>
+
+
+    <button class="btn3" onclick="playAudio('audio3')">
+        Achha Gya
+    </button>
+
+
+</div>
+
+
+<audio id="audio1" src="thikthak.mp3"></audio>
+<audio id="audio2" src="bakwas.mp3"></audio>
+<audio id="audio3" src="achhagya.mp3"></audio>
+
+
+<script>
+
+
+function playAudio(id){
+
+
+    let audios = document.querySelectorAll("audio");
+
+
+    audios.forEach(audio=>{
+        audio.pause();
+        audio.currentTime = 0;
+    });
+
+
+    document.getElementById(id).play();
+}
+
+
+</script>
+
+
+</body>
+</html>
